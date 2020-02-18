@@ -21,11 +21,13 @@ ec_2_sal(temp, cond)
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-  \item{temp }{Temperature should be either the temperature at which the reading was taken in celsius, in the case of electrical conductivity, or 25C, in the case of specific conductance (which is electrical conductivity normalized to a a temperature of 25C). It is extremely important that the user knows which their values are. The units are identical for both, but can result in wildly different calculated salinities if one is mistaken for the other. The SLS, 20mm and SKT surveys from CDFW have been specific conductance for the entirety of their run, EVEN WHEN THE OLD DATABASES REFFERRED TO ELECTRICAL CONDUCTIVITY. Bay study was electical conductivity from 1981-1990 (inclusive), but specific conductance after that period. Our own database is unfortunately a bit of both, but we have recorded calculated salinity directly, so this should always be used instead of conductance. This might change in the future.}
+  \item{temp }{Temperature should be either the temperature at which the reading was taken in celsius, in the case of electrical conductivity, or 25C, in the case of specific conductance (which is electrical conductivity normalized to a a temperature of 25C). It is extremely important that the user knows which their values are. The units are identical for both, but can result in wildly different calculated salinities if one is mistaken for the other. The SLS, 20mm and SKT surveys from CDFW have been specific conductance for the entirety of their run, EVEN WHEN THE OLD DATABASES REFFERRED TO ELECTRICAL CONDUCTIVITY. Bay study was electical conductivity from 1981-1990 (inclusive), but specific conductance after that period. Our own database is unfortunately a bit of both, but we have recorded calculated salinity directly, so this should always be used instead of conductance. This might change in the future.
+  }
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
 \references{
+UNESCO 44: Algorithms for computation of fundamental properties of seawater
 %% ~put references to the literature/web site here ~
 }
 \author{
