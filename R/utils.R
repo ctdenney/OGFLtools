@@ -226,3 +226,13 @@ colmatch <- function(x,y, match = F, join = F){
   }
 
 }
+
+ec_2_spc = function(temp, ec) {
+  spc = ec/(1 + (0.0191 * (temp - 25)))
+  return(spc)
+}
+
+spc_2_ec = function(temp,spc) {
+  ec = (1 + (0.0191 * (temp - 25)))*spc
+  return(ec)
+}
