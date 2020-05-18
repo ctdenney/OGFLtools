@@ -107,40 +107,40 @@ membermix = function(sr, conc, sal, mix) {
 ##the models are calculated in the lengthconversion script
 l2l = function(from, to = 'flf',length) {
   if(from == 'slf' & to == 'flf') {
-    calclength =  1.084072 *(length)+ -0.1094328
+    calclength =  1.046694 *(length)+ 2.741875
   } else if (from == 'slf' & to == 'tlf') {
-    calclength =  1.198036 *length+ -1.3314
+    calclength =  1.164434 *length+ 1.095035
   } else if (from == 'tlf' & to == 'flf') {
-    calclength =  0.8960252 *length+ 1.803176
+    calclength =  0.8959148 *length+ 2.030626
   } else if (from == 'tlf' & to == 'slf') {
-    calclength =  0.8327418 *length+ 1.246583
+    calclength =  0.8530776 *length+ -0.4158636
   } else if (from == 'flf' & to == 'slf') {
-    calclength =  0.9209478 *length+ 0.1857619
+    calclength =  0.9495577 *length+ -2.127712
   } else if (from == 'flf' & to == 'tlf') {
-    calclength =  1.114223 *length+ -1.89665
+    calclength =  1.109416 *length+ -1.696259
   } else if (from == 'sle' & to == 'flf') {
     ## used sle-fle-flf instead of sle-slf-flf because the sle-slf model is considerably worse than the sle-fle model
-    intercalc =  1.08519 *length+ 1.462598 #sle to fle
-    calclength =  1.051787 *intercalc+ -2.69404 #fle to flf
+    intercalc =  1.092 *length+ 0.8059086 #sle to fle
+    calclength =  1.017514 *intercalc+ 1.492639 #fle to flf
   } else if (from == 'sle' & to == 'tlf') {
-    intercalc =  1.038981 *length+ 1.183531
-    calclength =  1.198036 *intercalc+ -1.3314
+    intercalc =  1.023139 *length+ 3.570214
+    calclength =  1.164434 *intercalc+ 1.095035
   } else if (from == 'sle' & to == 'slf') {
-    calclength =  1.038981 *length+ 1.183531
+    calclength =  1.023139 *length+ 3.570214
   } else if (from == 'fle' & to == 'flf') {
-    calclength =  1.051787 *length+ -2.69404
+    calclength =  1.017514 *length+ 1.492639
   } else if (from == 'fle' & to == 'slf') {
-    intercalc =  1.051787 *length+ -2.69404 # fle to flf
-    calclength =  0.9209478 *intercalc+ 0.1857619 #flf to slf
+    intercalc =  1.017514 *length+ 1.492639 # fle to flf
+    calclength =  0.9495577 *intercalc+ -2.127712 #flf to slf
   } else if (from == 'fle' & to == 'tlf') {
-    intercalc =  1.051787 *length+ -2.69404 #fle to flf
-    calclength =  1.114223 *intercalc+ -1.89665 #flf to tlf
+    intercalc =  1.017514 *length+ 1.492639 #fle to flf
+    calclength =  1.109416 *intercalc+ -1.696259 #flf to tlf
   } else if (from == 'flfrz' & to == 'flf') {
-    calclength =  0.9498874 *length+ 6.318834
+    calclength =  0.9983984 *length+ 2.084482
   } else if (from == 'slfrz' & to == 'flf') {
-    calclength =  0.9610986 *length+ 11.40737
+    calclength =  1.052409 *length+ 4.533137
   } else if (from == 'tlfrz' & to == 'flf') {
-    calclength =  0.9064248 *length+ 2.771827
+    calclength =  0.9055277 *length+ 2.737323
   }else {
     stop('Unsupported conversion', call. = F)
   }
