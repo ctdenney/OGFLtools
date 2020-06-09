@@ -107,40 +107,40 @@ membermix = function(sr, conc, sal, mix) {
 ##the models are calculated in the lengthconversion script
 l2l = function(from, to = 'flf',length) {
   if(from == 'slf' & to == 'flf') {
-    calclength =  predict(slf2flf, newdata = data.frame(slfl = length))
+    calclength =  1.046694 *(length)+ 2.741875
   } else if (from == 'slf' & to == 'tlf') {
-    calclength =  predict(slf2tlf, newdata = data.frame(slfl = length))
+    calclength =  1.164434 *length+ 1.095035
   } else if (from == 'tlf' & to == 'flf') {
-    calclength =  predict(tlf2flf, newdata = data.frame(tlfl = length))
+    calclength =  0.8959148 *length+ 2.030626
   } else if (from == 'tlf' & to == 'slf') {
-    calclength =  predict(tlf2slf, newdata = data.frame(tlfl = length))
+    calclength =  0.8530776 *length+ -0.4158636
   } else if (from == 'flf' & to == 'slf') {
-    calclength =  predict(flf2slf, newdata = data.frame(flfl = length))
+    calclength =  0.9495577 *length+ -2.127712
   } else if (from == 'flf' & to == 'tlf') {
-    calclength =  predict(flf2tlf, newdata = data.frame(flfl = length))
+    calclength =  1.109416 *length+ -1.696259
   } else if (from == 'sle' & to == 'flf') {
     ## used sle-fle-flf instead of sle-slf-flf because the sle-slf model is considerably worse than the sle-fle model
-    intercalc =  predict(sle2fle, newdata = data.frame(slet = length)) #sle to fle
-    calclength =  predict(fle2flf, newdata = data.frame(flet = length)) #fle to flf
+    intercalc =  1.092 *length+ 0.8059086 #sle to fle
+    calclength =  1.017514 *intercalc+ 1.492639 #fle to flf
   } else if (from == 'sle' & to == 'tlf') {
-    intercalc =  predict(sle2slf, newdata = data.frame(slet = length)) #sle to slf
-    calclength =  predict(slf2tlf, newdata = data.frame(slfl = length)) #slf to tlf
+    intercalc =  1.023139 *length+ 3.570214
+    calclength =  1.164434 *intercalc+ 1.095035
   } else if (from == 'sle' & to == 'slf') {
-    calclength =  predict(sle2slf, newdata = data.frame(slet = length))
+    calclength =  1.023139 *length+ 3.570214
   } else if (from == 'fle' & to == 'flf') {
-    calclength =  predict(slf2flf, newdata = data.frame(slfl = length))
+    calclength =  1.017514 *length+ 1.492639
   } else if (from == 'fle' & to == 'slf') {
-    intercalc =  predict(fle2flf, newdata = data.frame(flet = length)) # fle to flf
-    calclength =  predict(flf2slf, newdata = data.frame(flfl = length)) #flf to slf
+    intercalc =  1.017514 *length+ 1.492639 # fle to flf
+    calclength =  0.9495577 *intercalc+ -2.127712 #flf to slf
   } else if (from == 'fle' & to == 'tlf') {
-    intercalc =  predict(fle2flf, newdata = data.frame(flet = length)) #fle to flf
-    calclength =  predict(flf2tlf, newdata = data.frame(flfl = length)) #flf to tlf
+    intercalc =  1.017514 *length+ 1.492639 #fle to flf
+    calclength =  1.109416 *intercalc+ -1.696259 #flf to tlf
   } else if (from == 'flfrz' & to == 'flf') {
-    calclength =  predict(flfrz2flf, newdata = data.frame(flfrz = length))
+    calclength =  0.9983984 *length+ 2.084482
   } else if (from == 'slfrz' & to == 'flf') {
-    calclength =  predict(slfrz2flf, newdata = data.frame(slfrz = length))
+    calclength =  1.052409 *length+ 4.533137
   } else if (from == 'tlfrz' & to == 'flf') {
-    calclength =  predict(tlfrz2flf, newdata = data.frame(tlfrz = length))
+    calclength =  0.9055277 *length+ 2.737323
   }else {
     stop('Unsupported conversion', call. = F)
   }
