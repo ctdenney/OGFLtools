@@ -21,9 +21,9 @@ sr_2_sal(sr, srfw = 0.705781, srmar = 0.70918, confw = 103.8, conmar = 7900, sal
   \item{salfw}{Salinity of freshwater (or endmember 1).}
   \item{salmar}{Salinity of the ocean (or endmember 2).}
   \item{sallim_high}{Maximum allowed salinity value.}
-  \item{high_fill}{what to replace calculated values that exceed the sallim_high value (e.g. "NA" or 7). Must be either "NA" (as a string) or numeric value.}
+  \item{fill_high}{what to replace calculated values that exceed the sallim_high value (e.g. "NA" or 7). Must be either "NA" (as a string) or numeric value.}
   \item{sallim_low}{Minimum allowed salinity value.}
-  \item{lowfill}{what to replace calculated values that are lower than the sallim_low value (e.g. "NA" or 0.1). Must be either "NA" (as a string) or numeric value.}
+  \item{fill_low}{what to replace calculated values that are lower than the sallim_low value (e.g. "NA" or 0.1). Must be either "NA" (as a string) or numeric value.}
   \item{suppress.warnings}{argument to suppress the warning that some values are outside the boundaries of the srfw and srmar values. Default is F and warnings will be displayed. Value of T will hide warnings. Note that, without the warnings, values outside the sallim values will STILL be replaced.}
 }
 \details{
