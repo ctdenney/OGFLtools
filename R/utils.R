@@ -41,7 +41,7 @@ sal_2_spc = function(sal){
 }
 
 
-sr_2_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 6819,salfw = 0.1,salmar = 31.8, sallim_high, high_fill = "NA", sallim_low, low_fill = "NA",suppress.warnings = F){
+sr_2_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 6819,salfw = 0.1,salmar = 31.8, sallim_high, fill_high = "NA", sallim_low, fill_low = "NA",suppress.warnings = F){
   if (any(sr < min(srfw, srmar)| sr > max(srfw, srmar), na.rm = T) & suppress.warnings == F) {
     warning('Some of your measured strontium ratio values are outside the bounds of your two endmembers, make sure that srfw and srmar are set correctly',
             call. = F, immediate. = T)
@@ -49,17 +49,17 @@ sr_2_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 
   if (is.na(sallim_high) | is.na(sallim_low)) stop('You have not set one or both of the salinity limit values(sallim_high and sallim_low arguments)')
     sal = (((salfw*srmar*conmar) - (salfw*sr*conmar) - (salmar*srmar*conmar) + (salmar*sr*conmar))/
              ((sr*confw) - (sr*conmar) - (srfw*confw) + (srmar*conmar))) + salmar
-    if((high_fill != 'NA' & is.numeric(high_fill) == F) | (low_fill != 'NA' & is.numeric(low_fill) == F)) stop('you have not set an appropriate fill value. Fill must be either \'NA\' or a numeric value, for both low_fill and high_fill.')
-    else if(high_fill == 'NA') {
+    if((fill_high != 'NA' & is.numeric(fill_high) == F) | (fill_low != 'NA' & is.numeric(fill_low) == F)) stop('you have not set an appropriate fill value. Fill must be either \'NA\' or a numeric value, for both fill_low and fill_high.')
+    else if(fill_high == 'NA') {
       sal[sal > sallim_high] = NA
-    } else if (is.numeric(high_fill)) {
-      sal [sal > sallim_high] = high_fill
+    } else if (is.numeric(fill_high)) {
+      sal [sal > sallim_high] = fill_high
     }
 
-    if(low_fill == 'NA') {
+    if(fill_low == 'NA') {
       sal[sal < sallim_low] = NA
-    } else if (is.numeric(low_fill)) {
-      sal [sal < sallim_low] = low_fill
+    } else if (is.numeric(fill_low)) {
+      sal [sal < sallim_low] = fill_low
     }
     return(sal)
 }
