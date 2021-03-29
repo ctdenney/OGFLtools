@@ -50,18 +50,69 @@ sr_2_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 
     sal = (((salfw*srmar*conmar) - (salfw*sr*conmar) - (salmar*srmar*conmar) + (salmar*sr*conmar))/
              ((sr*confw) - (sr*conmar) - (srfw*confw) + (srmar*conmar))) + salmar
     if((fill_high != 'NA' & is.numeric(fill_high) == F) | (fill_low != 'NA' & is.numeric(fill_low) == F)) stop('you have not set an appropriate fill value. Fill must be either \'NA\' or a numeric value, for both fill_low and fill_high.')
-    else if(fill_high == 'NA') {
-      sal[sal > sallim_high] = NA
+    else if(srmar > srfw){
+      if (fill_high == 'NA') {
+        sal[sal > sallim_high | sr > srmar] = NA
+      } else if (is.numeric(fill_high)) {
+        sal [sal > sallim_high |sr > srmar] = fill_high
+      }
+
+      if(fill_low == 'NA') {
+        sal[sal < sallim_low | sr < srfw] = NA
+      } else if (is.numeric(fill_low)) {
+        sal [sal < sallim_low | sr < srfw] = fill_low
+      }
+    } else if (srmar < srfw) {
+      if (fill_high == 'NA') {
+        sal[sal > sallim_high | sr < srmar] = NA
+      } else if (is.numeric(fill_high)) {
+        sal [sal > sallim_high |sr < srmar] = fill_high
+      }
+
+      if(fill_low == 'NA') {
+        sal[sal < sallim_low | sr > srfw] = NA
+      } else if (is.numeric(fill_low)) {
+        sal [sal < sallim_low | sr > srfw] = fill_low
+      }
+    }
+    return(sal)
+}
+
+sr_to_sal = function(sr, sr1 = 0.705264, sr2 = 0.70918,con1 = 74.6, con2 = 6819,sal1 = 0.1,sal2 = 31.8, sallim_high, fill_high = "NA", sallim_low, fill_low = "NA",suppress.warnings = F){
+  if (any(sr < min(sr1, sr2)| sr > max(sr1, sr2), na.rm = T) & suppress.warnings == F) {
+    warning('Some of your measured strontium ratio values are outside the bounds of your two endmembers, make sure that sr1 and sr2 are set correctly',
+            call. = F, immediate. = T)
+  }
+  if (is.na(sallim_high) | is.na(sallim_low)) stop('You have not set one or both of the salinity limit values(sallim_high and sallim_low arguments)')
+  sal = (((sal1*sr2*con2) - (sal1*sr*con2) - (sal2*sr2*con2) + (sal2*sr*con2))/
+           ((sr*con1) - (sr*con2) - (sr1*con1) + (sr2*con2))) + sal2
+  if((fill_high != 'NA' & is.numeric(fill_high) == F) | (fill_low != 'NA' & is.numeric(fill_low) == F)) stop('you have not set an appropriate fill value. Fill must be either \'NA\' or a numeric value, for both fill_low and fill_high.')
+  else if(sr2 > sr1){
+    if (fill_high == 'NA') {
+      sal[sal > sallim_high | sr > sr2] = NA
     } else if (is.numeric(fill_high)) {
-      sal [sal > sallim_high] = fill_high
+      sal [sal > sallim_high |sr > sr2] = fill_high
     }
 
     if(fill_low == 'NA') {
-      sal[sal < sallim_low] = NA
+      sal[sal < sallim_low | sr < sr1] = NA
     } else if (is.numeric(fill_low)) {
-      sal [sal < sallim_low] = fill_low
+      sal [sal < sallim_low | sr < sr1] = fill_low
     }
-    return(sal)
+  } else if (sr2 < sr1) {
+    if (fill_high == 'NA') {
+      sal[sal > sallim_high | sr < sr2] = NA
+    } else if (is.numeric(fill_high)) {
+      sal [sal > sallim_high | sr < sr2] = fill_high
+    }
+
+    if(fill_low == 'NA') {
+      sal[sal < sallim_low | sr > sr1] = NA
+    } else if (is.numeric(fill_low)) {
+      sal [sal < sallim_low | sr > sr1] = fill_low
+    }
+  }
+  return(sal)
 }
 
 sal_2_sr = function(sal, srfw = 0.705264, srmar = 0.70918, confw = 74.6, conmar = 6819, salfw = 0.1, salmar = 31.8) {
