@@ -1,5 +1,5 @@
-\name{sr_2_sal}
-\alias{sr_2_sal}
+\name{sr_to_sal}
+\alias{sr_to_sal}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert measured Strontium ratio to salinity
 
@@ -8,7 +8,7 @@
 This function calculates salinity from measured Sr using a 2 end member mixing model. It requires the measured Sr ratio, Endmember 1 Strontium, Endmember 2 Strontium, concentrations for each, and salinity of the two endmembers. Default values only correct for Sacramento Delta. Values associated with Endmember 1 are sr1, con1, and sal1. Values associated with Endmember 2 are sr2, con2, and sal2. By convention (although not required), endmember 1 is usually the lower salinity endmember. The default endmember 1 values were collected from the Sacramento river at CDFW station 711 on 2012-03-08. The default endmember 2 values were collected at Muir Beach on 2007-04-23
 }
 \usage{
-sr_2_sal(sr, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8)
+sr_to_sal(sr, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8)
 
 }
 

@@ -78,7 +78,7 @@ sal_2_spc = function(sal){
 #     return(sal)
 # }
 
-sr_to_sal = function(sr, sr1 = 0.70526, sr2 = 0.70918,con1 = 74.6, con2 = 6819,sal1 = 0.1,sal2 = 31.8, sallim_high = max(sal1, sal2), fill_high = "NA", sallim_low = min(sal1,sal2), fill_low = "NA",suppress.warnings = F){
+sr_to_sal = function(sr, sr1 = 0.70576, sr2 = 0.70918,con1 = 95, con2 = 6819,sal1 = 0.11,sal2 = 31.8, sallim_high = max(sal1, sal2), fill_high = "NA", sallim_low = min(sal1,sal2), fill_low = "NA",suppress.warnings = F){
   if (any(sr < min(sr1, sr2)| sr > max(sr1, sr2), na.rm = T) & suppress.warnings == F) {
     warning('Some of your measured strontium ratio values are outside the bounds of your two endmembers, make sure that sr1 and sr2 are set correctly',
             call. = F, immediate. = T)
