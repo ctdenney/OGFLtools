@@ -1,5 +1,5 @@
-\name{o2_2_sal}
-\alias{o2_2_sal}
+\name{o2_to_sal}
+\alias{o2_to_sal}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert Oxygen isotope ratio to salinity
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 This function uses published relationships of Oxygen isotope ratios and environmental salinity from either Ingram et al(1996) or McLaughlin et al(2006) to calculate salinity when given Oxygen isotope ratios. It is specific to the San Francisco Estuary system.
 }
 \usage{
-o2_2_sal(oxy_rat, source)
+o2_to_sal(oxy_rat, source)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

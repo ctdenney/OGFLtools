@@ -3,7 +3,7 @@
 
 }
 
-ec_2_sal = function(temp, cond){
+ec_to_sal = function(temp, cond){
   if (any(temp > 35, na.rm = T)) {
     warning('Temperature is high, ensure that units are in degrees C', call. = F, immediate. = T)
   }
@@ -27,7 +27,7 @@ ec_2_sal = function(temp, cond){
   return(sal)
 }
 
-sal_2_spc = function(sal){
+sal_to_spc = function(sal){
   if (any(sal > 40, na.rm = T)){
     warning("Salinity is high, ensure that data is correct")
   }
@@ -41,7 +41,7 @@ sal_2_spc = function(sal){
 }
 
 
-# sr_2_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 6819,salfw = 0.1,salmar = 31.8, sallim_high, fill_high = "NA", sallim_low, fill_low = "NA",suppress.warnings = F){
+# sr_to_sal = function(sr, srfw = 0.705264, srmar = 0.70918,confw = 74.6, conmar = 6819,salfw = 0.1,salmar = 31.8, sallim_high, fill_high = "NA", sallim_low, fill_low = "NA",suppress.warnings = F){
 #   if (any(sr < min(srfw, srmar)| sr > max(srfw, srmar), na.rm = T) & suppress.warnings == F) {
 #     warning('Some of your measured strontium ratio values are outside the bounds of your two endmembers, make sure that srfw and srmar are set correctly',
 #             call. = F, immediate. = T)
@@ -115,7 +115,7 @@ sr_to_sal = function(sr, sr1 = 0.70576, sr2 = 0.70918,con1 = 95, con2 = 6819,sal
   return(sal)
 }
 
-sal_2_sr = function(sal, srfw = 0.705264, srmar = 0.70918, confw = 74.6, conmar = 6819, salfw = 0.1, salmar = 31.8) {
+sal_to_sr = function(sal, srfw = 0.705264, srmar = 0.70918, confw = 74.6, conmar = 6819, salfw = 0.1, salmar = 31.8) {
   if(any(sal < min(salfw, salmar) | sal > max(salfw, salmar), na.rm = T)) {
     warning('Some of your measured salinity values are outside the bounds of your two endmembers, make sure that salfw and salmar are set correctly',
             call. = F, immediate. = T)
@@ -126,7 +126,7 @@ sal_2_sr = function(sal, srfw = 0.705264, srmar = 0.70918, confw = 74.6, conmar 
 
 }
 
-o2_2_sal = function(oxy_rat, source = 'ingram') {
+o2_to_sal = function(oxy_rat, source = 'ingram') {
   if(source == 'ingram') {
     sal = (oxy_rat + 10.9)/0.32
   } else if(source == 'mclg') {
@@ -137,11 +137,11 @@ o2_2_sal = function(oxy_rat, source = 'ingram') {
   return(sal)
 }
 
-vsmow_2_vpdb = function(x) {
+vsmow_to_vpdb = function(x) {
   return((0.97001*x)-29.99)
 }
 
-vpdb_2_vsmow = function(x) {
+vpdb_to_vsmow = function(x) {
   return((1.03091*x)+30.91)
 }
 
@@ -162,7 +162,7 @@ membermix = function(sr, conc, sal, mix) {
 
 ##all these values come from models based on the lfs_length_data.rda file included with this package
 ##the models are calculated in the lengthconversion script
-l2l = function(from, to = 'flf',length) {
+length_con = function(from, to = 'flf',length) {
   if(from == 'slf' & to == 'flf') {
     calclength =  1.046694 *(length)+ 2.741875
   } else if (from == 'slf' & to == 'tlf') {
@@ -284,12 +284,12 @@ colmatch <- function(x,y, match = F, join = F){
 
 }
 
-ec_2_spc = function(temp, ec) {
+ec_to_spc = function(temp, ec) {
   spc = ec/(1 + (0.0191 * (temp - 25)))
   return(spc)
 }
 
-spc_2_ec = function(temp,spc) {
+spc_to_ec = function(temp,spc) {
   ec = (1 + (0.0191 * (temp - 25)))*spc
   return(ec)
 }

@@ -1,5 +1,5 @@
-\name{l2l}
-\alias{l2l}
+\name{length_con}
+\alias{length_con}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
@@ -7,10 +7,10 @@ Function to convert between various length measurements
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-The function uses various length measurement relationships to convert from an availablem easurement into a desired measurement. For example, if only standard length after ethanol preservation (sle) was recorded, but fresh fork length measurement (flf) is desired, then flf can be calculated using the relationship between sle and flf from fish which had both measurements taken.
+The function uses various length measurement relationships to convert from an available measurement into a desired measurement. For example, if only standard length after ethanol preservation (sle) was recorded, but fresh fork length measurement (flf) is desired, then flf can be calculated using the relationship between sle and flf from fish which had both measurements taken.
 }
 \usage{
-l2l(from, to, length)
+length_con(from, to, length)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

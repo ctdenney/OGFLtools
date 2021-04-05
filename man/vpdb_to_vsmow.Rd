@@ -1,20 +1,20 @@
-\name{vsmow_2_vpdb}
-\alias{vsmow_2_vpdb}
+\name{vpdb_to_vsmow}
+\alias{vpdb_to_vsmow}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert from VSMOW to VPDB
 
 }
 \description{
-This function returns VPDB based when given VSMOW and is based on the reported function in Brand et al(2014), Coplen(1994), and Kim et al(2015)
+This function returns VSMOW based when given VPDB and is based on the reported function in Brand et al(2014), Coplen(1994), and Kim et al(2015)
 
 }
 \usage{
-vsmow_2_vpdb(x)
+vpdb_to_vsmow(x)
 
 }
 
 \arguments{
-  \item{x}{VSMOW in per mil}
+  \item{x}{VPDB in per mil}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~

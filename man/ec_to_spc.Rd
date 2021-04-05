@@ -1,5 +1,5 @@
-\name{ec_2_spc}
-\alias{ec_2_spc}
+\name{ec_to_spc}
+\alias{ec_to_spc}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Function to convert electrical conductivity to specific conductance
@@ -10,7 +10,7 @@ Electrical conductivity is the measured conductivity of a sample. Specific condu
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ec_2_spc(temp, ec)
+ec_to_spc(temp, ec)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

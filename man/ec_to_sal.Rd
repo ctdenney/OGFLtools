@@ -1,5 +1,5 @@
-\name{ec_2_sal}
-\alias{ec_2_sal}
+\name{ec_to_sal}
+\alias{ec_to_sal}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert electrical conductivity to salinity (PSU)
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 This function converts electrical conductivity to salinity given temperature and the measured conductivity, as described in Unesco 1983. Algorithms for computation of fundamental properties of seawater, 1983
 }
 \usage{
-ec_2_sal(temp, cond)
+ec_to_sal(temp, cond)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

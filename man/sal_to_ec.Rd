@@ -1,5 +1,5 @@
-\name{sal_2_ec}
-\alias{sal_2_ec}
+\name{sal_to_ec}
+\alias{sal_to_ec}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert salinity (PSU) to specific conducance (electrical conductivity at 25C)
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 This function converts salinity to specific conductance, which is the electrical conductivity at 25 degrees C.
 }
 \usage{
-sal_2_ec(sal)
+sal_to_ec(sal)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
