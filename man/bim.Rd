@@ -1,11 +1,11 @@
 \name{bim}
 \alias{bim}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Calculage growth trajectory using biological intercept model
+\title{Calculage growth trajectory using the biological intercept model
 %%  ~~function to do ... ~~
 }
 \description{
-Uses a BIM to calculate the growth at age for the full life history of a fish. It requires the fork length of the fish at capture (fl), the length at hatch for the species (hl) and the otolith radius trajecotry (gt).
+Uses a biological intercept model (BIM) to calculate the growth at age for the full life history of a fish. It requires the fork length of the fish at capture (fl), the length at hatch for the species (hl) and the otolith radius trajecotry (gt).
 }
 \usage{
 bim(fl, hl, gt)
@@ -28,6 +28,8 @@ bim(fl, hl, gt)
 }
 \references{
 %% ~put references to the literature/web site here ~
+(1)Campana, Steven E. "How reliable are growth back-calculations based on otoliths?." Canadian Journal of Fisheries and Aquatic Sciences 47, no. 11 (1990): 2219-2227
+(2)Hobbs, James A., William A. Bennett, Jessica Burton, and Bradd Baskerville-Bridges. "Modification of the biological intercept model to account for ontogenetic effects in laboratory-reared delta smelt (Hypomesus transpacificus)." Fishery Bulletin 105, no. 1 (2007): 30-38.
 }
 \author{
 %%  ~~who you are~~

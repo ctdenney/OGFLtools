@@ -5,18 +5,18 @@
 
 }
 \description{
-This function calculates salinity from measured Sr using a 2 end member mixing model. It requires the measured Sr ratio, Endmember 1 Strontium, Endmember 2 Strontium, concentrations for each, and salinity of the two endmembers. Default values only correct for Sacramento Delta. Values associated with Endmember 1 are sr1, con1, and sal1. Values associated with Endmember 2 are sr2, con2, and sal2. By convention (although not required), endmember 1 is usually the lower salinity endmember. The default endmember 1 values were collected from the Sacramento river at CDFW station 711 on 2012-03-08. The default endmember 2 values were collected at Muir Beach on 2007-04-23
+This function calculates salinity from measured Strontium isotope ratio (87Sr/86Sr) using a simple 2 end member mixing model. The function requires the measured sample Sr isotope ratio (87Sr/86Sr), and for each of the two endmembers the Sr isotope ratio (87Sr/86Sr), concentration, and salinity. Default values are based on measurements from the San Francisco Estuary. Values associated with Endmember 1 are sr1, con1, and sal1. Values associated with Endmember 2 are sr2, con2, and sal2. By convention (although not required), endmember 1 is the lower salinity endmember. The default endmember 1 values were collected from the Sacramento river at CDFW station 711 on 2012-03-08. The default endmember 2 values were collected at Muir Beach on 2007-04-23.
 }
 \usage{
-sr_to_sal(sr, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8)
+sr_to_sal(sr, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8, sallim_high, sallim_low, fill_high, fill_low)
 
 }
 
 \arguments{
-  \item{sr}{Measured strontium isotopic ratio. Must be given as the ratio of Sr87/Sr86.}
+  \item{sr}{Measured strontium isotopic ratio. Must be given as the ratio of 87Sr/86Sr.}
   \item{sr1}{Strontium ratio of endmember 1 (by default, the Sacramento River value).}
-  \item{sr2}{Strontium ratio of endmember 2 (by default, the oceanic value).}
-  \item{con1}{Concentation (parts per million) of Strontium in endmemb.}
+  \item{sr2}{Strontium ratio of endmember 2 (by default, the Pacfic Ocean value).}
+  \item{con1}{Concentation (parts per million) of Strontium in endmember 1}
   \item{con2}{Concentration (parts per million) of Strontium in the ocean (or endmember 2).}
   \item{sal1}{Salinity of endmember 1 (by default, the Sacramento River value).}
   \item{sal2}{Salinity of the ocean (or endmember 2).}

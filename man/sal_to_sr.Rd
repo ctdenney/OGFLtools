@@ -1,24 +1,24 @@
-\name{sal_2_sr}
-\alias{sal_2_sr}
+\name{sal_to_sr}
+\alias{sal_to_sr}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Convert salinity to Sr ratio
+\title{Convert salinity to Sr isotope ratio
 %%  ~~function to do ... ~~
 }
 \description{
-Uses the Sr/Sal mixing model to take a measured salinity value and determine a Sr ratio
+Uses the Sr/Sal mixing model to take a measured salinity value of a sample and determine a Sr isotope ratio (87Sr/86Sr)
 }
 \usage{
-sal_2_sr(sal, srfw = 0.705781, srmar = 0.70918, confw = 103.8, conmar = 7900, salfw = 0.1, salmar = 31.8)
+sal_to_sr(sal, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{sal}{Measured salinity. Should be giving as PSU.}
-  \item{srfw}{Strontium ratio of freshwater (or endmember 1).}
-  \item{srmar}{Strontium ratio of the ocean (or endmember 2).}
-  \item{confw}{Concentation (parts per million) of Strontium in freshwater (or endmember 1).}
-  \item{conmar}{Concentration (parts per million) of Strontium in the ocean (or endmember 2).}
-  \item{salfw}{Salinity of freshwater (or endmember 1).}
-  \item{salmar}{Salinity of the ocean (or endmember 2).}
+  \item{sal}{Measured salinity of the sample. Should be given as PSU.}
+  \item{sr1}{Strontium isotope ratio (87Sr/86Sr) of freshwater (or endmember 1).}
+  \item{sr2}{Strontium isotope ratio (87Sr/86Sr) of the ocean (or endmember 2).}
+  \item{con1}{Concentation (parts per million) of Strontium in freshwater (or endmember 1).}
+  \item{con2}{Concentration (parts per million) of Strontium in the ocean (or endmember 2).}
+  \item{sal1}{Salinity of freshwater (or endmember 1).}
+  \item{sal2}{Salinity of the ocean (or endmember 2).}
 %%     ~~Describe \code{x} here~~
 }
 \details{

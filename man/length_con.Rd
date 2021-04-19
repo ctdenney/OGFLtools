@@ -3,11 +3,11 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Function to convert between various length measurements
+Function to convert between various fish length measurements
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-The function uses various length measurement relationships to convert from an available measurement into a desired measurement. For example, if only standard length after ethanol preservation (sle) was recorded, but fresh fork length measurement (flf) is desired, then flf can be calculated using the relationship between sle and flf from fish which had both measurements taken.
+The function uses various fish length measurement relationships to convert from an available measurement into a desired measurement. For example, if only standard length after ethanol preservation (sle) was recorded, but fresh fork length measurement (flf) is desired, then flf can be calculated using the relationship between sle and flf from fish which had both measurements taken.
 }
 \usage{
 length_con(from, to, length)

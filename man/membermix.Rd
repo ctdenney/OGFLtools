@@ -5,15 +5,15 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function takes an arbitrary number of contributing endmembers, their respective Sr 87/86 ratios, their total Sr concentrations, their salinities,and their contribution to the mixutre (proportion) and calculates the ratio and concentration of the mixture
+This function takes an arbitrary number of contributing endmembers, their respective Sr isotope ratios (87Sr/86Sr), their total Sr concentrations, their salinities, and their contribution to the mixutre (proportion) and calculates the ratio and concentration of the mixture
 }
 \usage{
 membermix(sr, conc, sal, mix)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{sr}{a numeric vector of the sr ratios of the endmembers}
-  \item{conc}{a numeric vector of the sr concentrations of the endmembers}
+  \item{sr}{a numeric vector of the Sr isotope ratios (87Sr/86Sr) of the endmembers}
+  \item{conc}{a numeric vector of the Sr concentrations of the endmembers}
   \item{sal}{a numeric vector of the salinties of the endmembers}
   \item{mix}{a numeric vector of the relative contributions of the endmembers (needs to sum to 1)}
 }

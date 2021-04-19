@@ -80,7 +80,7 @@ sal_to_spc = function(sal){
 
 sr_to_sal = function(sr, sr1 = 0.70576, sr2 = 0.70918,con1 = 95, con2 = 6819,sal1 = 0.11,sal2 = 31.8, sallim_high = max(sal1, sal2), fill_high = "NA", sallim_low = min(sal1,sal2), fill_low = "NA",suppress.warnings = F){
   if (any(sr < min(sr1, sr2)| sr > max(sr1, sr2), na.rm = T) & suppress.warnings == F) {
-    warning('Some of your measured strontium ratio values are outside the bounds of your two endmembers, make sure that sr1 and sr2 are set correctly',
+    warning('Some of your measured strontium isotope ratio values are outside the bounds of your two endmembers, make sure that sr1 and sr2 are set correctly',
             call. = F, immediate. = T)
   }
   if (is.na(sallim_high) | is.na(sallim_low)) stop('You have not set one or both of the salinity limit values(sallim_high and sallim_low arguments)')
@@ -115,22 +115,22 @@ sr_to_sal = function(sr, sr1 = 0.70576, sr2 = 0.70918,con1 = 95, con2 = 6819,sal
   return(sal)
 }
 
-sal_to_sr = function(sal, srfw = 0.705264, srmar = 0.70918, confw = 74.6, conmar = 6819, salfw = 0.1, salmar = 31.8) {
-  if(any(sal < min(salfw, salmar) | sal > max(salfw, salmar), na.rm = T)) {
-    warning('Some of your measured salinity values are outside the bounds of your two endmembers, make sure that salfw and salmar are set correctly',
+sal_to_sr = function(sal, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11, sal2 = 31.8) {
+  if(any(sal < min(sal1, sal2) | sal > max(sal1, sal2), na.rm = T)) {
+    warning('Some of your measured salinity values are outside the bounds of your two endmembers, make sure that sal1 and sal2 are set correctly',
             call. = F, immediate. = T)
   }
-    sr = ((((srfw*confw*sal)-(srfw*confw*salmar))/(salfw - salmar))+(srmar*conmar)-(((srmar*conmar*sal)-(srmar*conmar*salmar))/(salfw - salmar)))/
-      ((((confw*sal)-(confw*salmar))/(salfw - salmar))+(conmar)-(((conmar*sal)-(conmar*salmar))/(salfw-salmar)))
+    sr = ((((sr1*con1*sal)-(sr1*con1*sal2))/(sal1 - sal2))+(sr2*con2)-(((sr2*con2*sal)-(sr2*con2*sal2))/(sal1 - sal2)))/
+      ((((con1*sal)-(con1*sal2))/(sal1 - sal2))+(con2)-(((con2*sal)-(con2*sal2))/(sal1-sal2)))
     return(sr)
 
 }
 
-o2_to_sal = function(oxy_rat, source = 'ingram') {
+o_to_sal = function(d18O, source = 'ingram') {
   if(source == 'ingram') {
-    sal = (oxy_rat + 10.9)/0.32
+    sal = (d18O + 10.9)/0.32
   } else if(source == 'mclg') {
-    sal = (oxy_rat + 10.17)/0.29
+    sal = (d18O + 10.17)/0.29
   } else{
     warning('Non-supported source')
   }

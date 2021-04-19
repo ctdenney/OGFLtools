@@ -5,7 +5,7 @@
 
 }
 \description{
-This function returns VSMOW based when given VPDB and is based on the reported function in Brand et al(2014), Coplen(1994), and Kim et al(2015)
+This function returns VSMOW when given VPDB and is based on the reported function in Brand et al(2014), Coplen(1994), and Kim et al(2015)
 
 }
 \usage{

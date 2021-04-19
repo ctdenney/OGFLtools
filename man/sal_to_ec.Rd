@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{
-This function converts salinity to specific conductance, which is the electrical conductivity at 25 degrees C.
+This function converts salinity to specific conductance, which is the electrical conductivity at 25C.
 }
 \usage{
 sal_to_ec(sal)

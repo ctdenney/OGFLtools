@@ -1,18 +1,18 @@
-\name{o2_to_sal}
-\alias{o2_to_sal}
+\name{o_to_sal}
+\alias{o_to_sal}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Convert Oxygen isotope ratio to salinity
 %%  ~~function to do ... ~~
 }
 \description{
-This function uses published relationships of Oxygen isotope ratios and environmental salinity from either Ingram et al(1996) or McLaughlin et al(2006) to calculate salinity when given Oxygen isotope ratios. It is specific to the San Francisco Estuary system.
+This function uses published relationships of d18O and environmental salinity from either Ingram et al(1996) or McLaughlin et al(2006) to calculate salinity when given d18O. It is specific to the San Francisco Estuary.
 }
 \usage{
-o2_to_sal(oxy_rat, source)
+o_to_sal(d18O, source)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{oxy_rat}{is the measured Oxygen isotope ratio}
+  \item{d18O}{is the measured d18O}
   \item{source}{is the desired source function. Currently only 'ingram' and 'mclg' are supported.}
 }
 \details{
