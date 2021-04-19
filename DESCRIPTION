@@ -1,7 +1,7 @@
 Package: OGFLtools
 Type: Package
 Title: Several utility functions for use in the OGFL
-Version: 1.1.0
+Version: 1.2.0
 Author: Christian Denney, Malte Willmes, Arthur Barros
 Maintainer: Christian Denney <ctdenney@ucdavis.edu>
 Description: Most of the functions in this package are for converting to and from various measurements. Some of these are for physical processes, others are for statistically derived relationships.
