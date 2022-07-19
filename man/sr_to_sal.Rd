@@ -16,8 +16,8 @@ sr_to_sal(sr, sr1 = 0.70576, sr2 = 0.70918, con1 = 95, con2 = 6819, sal1 = 0.11,
   \item{sr}{Measured strontium isotopic ratio. Must be given as the ratio of 87Sr/86Sr.}
   \item{sr1}{Strontium ratio of endmember 1 (by default, the Sacramento River value).}
   \item{sr2}{Strontium ratio of endmember 2 (by default, the Pacfic Ocean value).}
-  \item{con1}{Concentation (parts per million) of Strontium in endmember 1}
-  \item{con2}{Concentration (parts per million) of Strontium in the ocean (or endmember 2).}
+  \item{con1}{Concentation of Strontium in endmember 1. Default values are in parts per billion (ppb), but the function will accept and work with any units, as long as they are the same for con1 and con2}
+  \item{con2}{Concentration of Strontium in the ocean (or endmember 2).Default values are in parts per billion (ppb), but the function will accept and work with any units, as long as they are the same for con1 and con2}
   \item{sal1}{Salinity of endmember 1 (by default, the Sacramento River value).}
   \item{sal2}{Salinity of the ocean (or endmember 2).}
   \item{sallim_high}{Maximum allowed salinity value. Default value is the higher salinity of the two endmembers}
