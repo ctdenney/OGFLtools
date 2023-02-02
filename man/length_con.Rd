@@ -33,9 +33,10 @@ The length or lengths to be converted.
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-    \item{from }{Must be one of flf, fle, slf, sle, and tlf are supported (tle, total length ethanol, is not a supported input measurement). If not one of these, will return an error message.}
+    \item{from }{Must be one of flf, fle, slf, sle, flfrz, slfrz, tlfrz, and tlf are supported (tle, total length ethanol, is not a supported input measurement). If not one of these, will return an error message.}
     \item{to }{Must be one of flf, slf, and tlf are supported. If not, will return an error message.}
     \item{length}{A single value or vector of numeric values. Conversion functions were created using fish >40mm. If a length is smaller than that, a warning will be produced.}
+    \item{length types:}{The first two letters refer to the length type: sl = standard length, fl = fork length, and tl = total length. The rest of the letters refer to preservative type: f = fresh/live, e = ethanol, frz = frozen. Formalin is not currently a supported preservative type.}
 %% ...
 }
 \references{
